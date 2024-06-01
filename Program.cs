@@ -91,7 +91,7 @@ namespace IngameScript
 
         public Program()
         {
-            Runtime.UpdateFrequency = UpdateFrequency.Once | UpdateFrequency.Update10;
+            Runtime.UpdateFrequency = UpdateFrequency.Update100;
 
             SetDefultConfiguration();
 
