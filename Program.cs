@@ -115,6 +115,7 @@ namespace IngameScript
                 panels[0].GetSprites(spritesList);
             }
 
+            ProgrammableBlockScreen();
         }
 
         public void DebugLCD(string text)
@@ -495,6 +496,61 @@ namespace IngameScript
             DrawBox(frame, x2, 512 / 2, lineWith_FLoat, 512, Color.Black);
             DrawBox(frame, x31, 512 / 2, facilityBox_RowInterval_Float + 2, 512, Color.Black);
             DrawBox(frame, x5, 512 / 2, lineWith_FLoat, 512, Color.Black);
+
+        }
+        public void ProgrammableBlockScreen()
+        {
+
+            //  512 X 320
+            IMyTextSurface panel = Me.GetSurface(0);
+
+            if (panel == null) return;
+            panel.ContentType = ContentType.SCRIPT;
+
+            MySpriteDrawFrame frame = panel.DrawFrame();
+
+            float x = 512 / 2, y1 = 205;
+            DrawLogo(frame, x, y1, 200);
+            PanelWriteText(frame, "Produce Graphic Dispaly\nIn LCDs\nby Hi.James and li-guohao.", x, y1 + 110, 1f, TextAlignment.CENTER);
+
+            frame.Dispose();
+
+        }
+
+        public void DrawLogo(MySpriteDrawFrame frame, float x, float y, float width)
+        {
+            MySprite sprite = new MySprite()
+            {
+                Type = SpriteType.TEXTURE,
+                Data = "Screen_LoadingBar",
+                Position = new Vector2(x, y),
+                Size = new Vector2(width - 6, width - 6),
+                RotationOrScale = Convert.ToSingle(counter_Logo / 360 * 2 * Math.PI),
+                Alignment = TextAlignment.CENTER,
+            };
+            frame.Add(sprite);
+
+            sprite = new MySprite()
+            {
+                Type = SpriteType.TEXTURE,
+                Data = "Screen_LoadingBar",
+                Position = new Vector2(x, y),
+                Size = new Vector2(width / 2, width / 2),
+                RotationOrScale = Convert.ToSingle(2 * Math.PI - counter_Logo / 360 * 2 * Math.PI),
+                Alignment = TextAlignment.CENTER,
+            };
+            frame.Add(sprite);
+
+            sprite = new MySprite()
+            {
+                Type = SpriteType.TEXTURE,
+                Data = "Screen_LoadingBar",
+                Position = new Vector2(x, y),
+                Size = new Vector2(width / 4, width / 4),
+                RotationOrScale = Convert.ToSingle(Math.PI + counter_Logo / 360 * 2 * Math.PI),
+                Alignment = TextAlignment.CENTER,
+            };
+            frame.Add(sprite);
 
         }
 
