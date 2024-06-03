@@ -32,6 +32,7 @@ namespace IngameScript
         * @author [Hi.James](https://space.bilibili.com/368005035)
         * @author [li-guohao](https://github.com/li-guohao)
         */
+        const string version = "1.0.0";
         MyIni _ini = new MyIni();
 
         List<IMyCargoContainer> cargoContainers = new List<IMyCargoContainer>();
@@ -511,7 +512,7 @@ namespace IngameScript
 
             float x = 512 / 2, y1 = 205;
             DrawLogo(frame, x, y1, 200);
-            PanelWriteText(frame, "Produce Graphic Dispaly\nIn LCDs\nby Hi.James and li-guohao.", x, y1 + 110, 1f, TextAlignment.CENTER);
+            PanelWriteText(frame, "Produce Graphic Dispaly\nIn LCDs With Version " + version + "\nby Hi.James and li-guohao.", x, y1 + 110, 1f, TextAlignment.CENTER);
 
             frame.Dispose();
 
