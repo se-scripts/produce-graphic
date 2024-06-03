@@ -32,7 +32,7 @@ namespace IngameScript
         * @author [Hi.James](https://space.bilibili.com/368005035)
         * @author [li-guohao](https://github.com/li-guohao)
         */
-        const string version = "1.0.0";
+        const string version = "1.0.1";
         MyIni _ini = new MyIni();
 
         List<IMyCargoContainer> cargoContainers = new List<IMyCargoContainer>();
@@ -54,25 +54,6 @@ namespace IngameScript
         Color background_Color = new Color(0, 35, 45);
         Color border_Color = new Color(0, 130, 255);
 
-        public struct ItemList
-        {
-            public string Name;
-            public double Amount;
-        }
-        ItemList[] itemList_All;
-        ItemList[] itemList_Ore;
-        ItemList[] itemList_Ingot;
-        ItemList[] itemList_Component;
-        ItemList[] itemList_AmmoMagazine;
-
-
-        public struct ComparisonTable
-        {
-            public string Name;
-            public string BluePrintName;
-            public double Amount;
-            public bool HasItem;
-        }
 
         public struct Facility_Struct
         {
